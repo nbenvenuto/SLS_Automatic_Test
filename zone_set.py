@@ -2,6 +2,7 @@ import os
 import sys
 import subprocess
 
+
 class ClusterInteraction():
 
   def __init__(self, ci_path):
@@ -65,12 +66,14 @@ class ClusterInteraction():
     
     return data
 
+
 def main():
   ci_path = r'C:\Program Files (x86)\Datalogic\DLSentinel\3.1.0\DLSentinel.exe'
   ci = ClusterInteraction(ci_path)
   output = ci.discovery()
   output = ci.enableZoneSetSwith()
-    
+
+
   try:
     while True:
       zone_set = input('Please enter a zone set (CTRL+C to exit): ')
@@ -80,6 +83,7 @@ def main():
     ci.disableZoneSetSwith()
     print('Exit!')
     sys.exit(0)
-  
+
+
 if __name__ == '__main__':
   main()
